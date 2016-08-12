@@ -7,7 +7,7 @@ import BaseHTTPServer
 class RedirectHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
     def do_HEAD(self):
-        host = self.headers.get("host", "1.1.1.1").split(":")[0]
+        host = self.headers.get("host", "192.168.8.200").split(":")[0]
         self.send_response(302)
         self.send_header("Location", "http://%s:8008/" % host)
         self.end_headers()
